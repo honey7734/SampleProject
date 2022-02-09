@@ -36,12 +36,15 @@ public class Controller {
 			case View.BOARD_LIST: view = boardService.boardList(); break;
 			case View.BOARD_READ: view = boardService.boardRead(); break;
 			case View.BOARD_INSERT: view = boardService.boardInsert(); break;
+			case View.BOARD_UPDATE: view = boardService.boardUpdate(); break;
+			case View.BOARD_DELETE: view = boardService.boardDelete(); break;
+			
 			}
 		}
 	}
 
 	private int home() {
-		System.out.println("1.로그인  2.회원가입  0.프로그램 종료>");
+		System.out.print("1.로그인  2.회원가입  0.프로그램 종료>");
 		int input = ScanUtil.nextInt();
 		
 		switch (input) {

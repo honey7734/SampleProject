@@ -32,9 +32,9 @@ public class MemberService {
 		System.out.println("=========== 회원가입 ===========");
 		System.out.print("아이디>");
 		String memId = ScanUtil.nextLine();
-		System.out.println("비밀번호>");
+		System.out.print("비밀번호>");
 		String password = ScanUtil.nextLine();
-		System.out.println("이름>");
+		System.out.print("이름>");
 		String memName = ScanUtil.nextLine();
 		
 		//아이디 중복확인
@@ -60,9 +60,9 @@ public class MemberService {
 
 	public int login() {
 		System.out.println("=========== 로그인 ===========");
-		System.out.println("아이디>");
+		System.out.print("아이디>");
 		String memId = ScanUtil.nextLine();
-		System.out.println("비밀번호>");
+		System.out.print("비밀번호>");
 		String password = ScanUtil.nextLine();
 		
 		Map<String,Object> member = memberDao.selectMember(memId, password);
