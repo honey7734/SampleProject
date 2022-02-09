@@ -1,5 +1,7 @@
 package controller;
 
+import service.BoardService;
+import service.MemberService;
 import utill.ScanUtil;
 import utill.View;
 
@@ -19,16 +21,21 @@ public class Controller {
 		new Controller().start();
 		
 	}
-
+	
+	private MemberService memberService = MemberService.getInstance();
+	private BoardService boardService = BoardService.getInstance();
+	
 	private void start() {
 		int view = View.HOME;
 		
 		while(true) {
 			switch (view) {
 			case View.HOME: view = home(); break;
-			case View.LOGIN: view = login(); break;
-			case View.JOIN: view = join(); break;
-			case View.BOARD_LIST: view = boardList(); break;
+			case View.LOGIN: view = memberService.login(); break;
+			case View.JOIN: view = memberService.join(); break;
+			case View.BOARD_LIST: view = boardService.boardList(); break;
+			case View.BOARD_READ: view = boardService.boardRead(); break;
+			case View.BOARD_INSERT: view = boardService.boardInsert(); break;
 			}
 		}
 	}
